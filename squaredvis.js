@@ -46,11 +46,20 @@ function createSquares(){
             element.addEventListener("mouseover", rellenarBackground);
 
             function rellenarBackground(){
-                element.style.backgroundColor = "black";
+                element.style.backgroundColor = "rgb(" + generateRandom() + "," + generateRandom() + "," + generateRandom() + ")";
             }
         });
     }
     //let numberSquares = 16*16;
+}
+
+function generateRandom(min = 0, max = 255) {
+
+    let difference = max - min;
+    let rand = Math.random();
+    rand = Math.floor( rand * difference);
+    rand = rand + min;
+    return rand;
 }
 
 
